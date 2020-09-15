@@ -1,0 +1,5 @@
+#extend("index"):
+    #export("body"):
+            <p>#(message)</p>
+    #endexport
+#endextend

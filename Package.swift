@@ -2,19 +2,21 @@
 import PackageDescription
 
 let package = Package(
-    name: "weble-helper",
+    name: "vapor-leaf-example",
     platforms: [
        .macOS(.v10_15)
     ],
     dependencies: [
         // 💧 A server-side Swift web framework.
-        .package(url: "https://github.com/vapor/vapor.git", from: "4.0.0")
+        .package(url: "https://github.com/vapor/vapor.git", from: "4.14.0"),
+        .package(url: "https://github.com/vapor/leaf.git", from: "4.0.0-rc")
     ],
     targets: [
         .target(
-            name: "App",
-            dependencies: [
-                .product(name: "Vapor", package: "vapor")
+            name: "App", dependencies: [
+                .product(name: "Vapor", package: "vapor"),
+                .product(name: "Leaf", package: "leaf"),
+            
             ],
             swiftSettings: [
                 // Enable better optimizations when building in Release configuration. Despite the use of
